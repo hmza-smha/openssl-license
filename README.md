@@ -1,3 +1,33 @@
+# How to Use OpenSSL on Windows
+
+### 1. Download OpenSSL for Windows
+OpenSSL isn’t included by default in Windows. You can:
+- Get an installer from [Shining Light Productions](https://slproweb.com/products/Win32OpenSSL.html).
+  - Choose **Win64 OpenSSL** if you have a 64-bit Windows.
+  - Download the **.exe installer**.
+
+### 2. Install OpenSSL
+- Run the installer.
+- During installation, choose to add OpenSSL to the Windows system `PATH` (if prompted).
+  - If not, you’ll need to manually add the installation folder (e.g., `C:\Program Files\OpenSSL-Win64\bin`) to your system `PATH` afterwards.
+
+### 3. Add OpenSSL to your PATH (if necessary)
+- Press **Win+R**, type `sysdm.cpl`, and press Enter.
+- Go to **Advanced tab > Environment Variables**.
+- In “System variables,” find and edit `Path`, adding your OpenSSL `bin` folder (e.g., `C:\Program Files\OpenSSL-Win64\bin`).
+- Click OK.
+
+### 4. Open a New Command Prompt Window
+
+Close any old windows. Open a new **Command Prompt** and try:
+
+```shell
+openssl version
+```
+- You should see OpenSSL’s version, confirming installation.
+- 
+---
+
 # 1) Keys (OpenSSL)
 
 ```bash
