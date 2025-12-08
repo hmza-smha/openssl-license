@@ -149,3 +149,58 @@ app.Use(async (ctx, next) => {
 * For offline use set reasonable expiry and require periodic renewal to detect revocations.
 
 ---
+
+You **cannot fully prevent** a determined user from modifying IL code,
+**but you can make it extremely difficult + impossible to run without your server**.
+
+Below is the real-world way companies protect .NET licensing.
+
+---
+
+# ✅ 1) Use .NET Obfuscation (MUST)
+
+Use a commercial obfuscator that supports **control-flow**, **string-encryption**, **method encryption**, **anti-tamper**:
+
+* **ConfuserEx (free, OK)**
+* **Babel Obfuscator**
+* **Eazfuscator.NET**
+* **.NET Reactor (very strong)**
+* **Agile.NET (commercial)**
+
+This makes removing middleware **non-trivial**.
+
+---
+
+# ✅ 2) Put license logic in an internal DLL wrapped with anti-tamper
+
+Example structure:
+
+```
+WebApp.dll   → calls LicenseRuntime.dll → verifies signature
+LicenseRuntime.dll → obfuscated + anti-tamper
+```
+
+**Do NOT put verification directly in Program.cs.**
+Put it inside the protected DLL so they cannot patch Program.cs easily.
+
+---
+
+# ...
+---
+
+# 🔥 Real Answer (Industry Standard)
+
+You can **never** stop a determined hacker from modifying IL.
+But you can:
+
+* Make patching extremely time-consuming
+* Make reverse engineering very expensive
+* Make the app rely on server-side validation
+* Require periodic online renewal
+* Bind license to device
+* Use strong obfuscation + anti-tamper
+
+This is how commercial .NET software survives.
+
+---
+
