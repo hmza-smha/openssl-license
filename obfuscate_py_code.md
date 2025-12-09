@@ -47,5 +47,8 @@ If your goal is **maximum protection**:
 If your goal is **quick protection with minimal work**:
 ➡️ **Use PyArmor** to obfuscate your entire FastAPI project.
 
+https://pyarmor.readthedocs.io/en/v8.5.6/licenses.html
+<img width="723" height="495" alt="image" src="https://github.com/user-attachments/assets/18f6f1c2-b21d-4c43-ac67-a3138239fefb" />
+
 ---
 
