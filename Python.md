@@ -30,7 +30,7 @@ Example license (license.json):
 ```json
 {
   "customer": "ACME Corp",
-  "expiry": "2026-01-01",
+  "expiry": "2025-12-09T07:20:54Z", // UTC
   "max_users": 50,
   "features": ["core", "reports"],
   "machine_id": "SERVER-1234"
