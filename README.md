@@ -134,7 +134,7 @@ app.Use(async (ctx, next) => {
 
 * Create new `license.json` with new `expiry`.
 * Sign with `private.pem`: `openssl dgst -sha256 -sign private.pem -out license.sig license.json`
-* Deliver both files to customer ```license.json``` & ```license.sig``` (replace old ones).
+* Deliver both files to customer ```license.json``` & ```license.sig``` (replace old ones), and they should have the ```public.pem```.
 
 # 7) Key rotation & revocation (brief)
 
